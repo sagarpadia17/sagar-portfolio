@@ -219,8 +219,8 @@ export default function Contact() {
 
               <ContactItem icon={FiMail} label="Email" value={personalInfo.email} href={`mailto:${personalInfo.email}`} color="gold" />
               <ContactItem icon={FiPhone} label="Phone" value={personalInfo.phone} href={`tel:${personalInfo.phone.replace(/\s/g, '')}`} color="gold" />
-              <ContactItem icon={FiGithub} label="GitHub" value="github.com/sagarpadia" href={personalInfo.socials.github} color="blue" />
-              <ContactItem icon={FiLinkedin} label="LinkedIn" value="linkedin.com/in/sagarpadia" href={personalInfo.socials.linkedin} color="blue" />
+              <ContactItem icon={FiGithub} label="GitHub" value="github.com/sagarpadia17" href={personalInfo.socials.github} color="blue" />
+              <ContactItem icon={FiLinkedin} label="LinkedIn" value="linkedin.com/in/sagar-padia" href={personalInfo.socials.linkedin} color="blue" />
             </motion.div>
 
             {/* Right: form */}
