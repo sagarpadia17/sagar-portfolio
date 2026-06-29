@@ -80,7 +80,7 @@ function ImageGallery({ images }) {
 
 function ProjectModal({ project, onClose }) {
   const rank = rankStyles[project.rank] || rankStyles.A
-  const embedUrl = getDriveEmbedUrl(project.video)
+  const embedUrl = getEmbedUrl(project.video)
   const hasMedia = embedUrl || (project.images && project.images.length > 0)
 
   useEffect(() => {
