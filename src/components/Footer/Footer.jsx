@@ -24,7 +24,7 @@ export default function Footer() {
               className="font-semibold tracking-widest text-sm"
               style={{ fontFamily: 'Rajdhani, sans-serif', color: '#ECE8E1', letterSpacing: '0.2em' }}
             >
-              PADIA<span style={{ color: '#C9A227' }}>.DEV</span>
+              SAGAR<span style={{ color: '#C9A227' }}>.DEV</span>
             </span>
           </div>
 
