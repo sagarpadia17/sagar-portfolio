@@ -1,6 +1,7 @@
 export const personalInfo = {
   name: 'Sagar Padia',
   title: 'Front-End Developer',
+  resumeUrl: 'https://drive.google.com/file/d/1w5hnRRhTsyb8AAi-SxlsvyTvlM_8CJe3/view?usp=drive_link',
   taglines: [
     'Front-End Developer',
     'UI/UX Craftsman',
@@ -15,8 +16,8 @@ export const personalInfo = {
   email: 'sagarpadia7@gmail.com',
   phone: '+91 86906 74159',
   socials: {
-    github: 'https://github.com/sagarpadia',
-    linkedin: 'https://linkedin.com/in/sagarpadia',
+    github: 'https://github.com/sagarpadia17',
+    linkedin: 'https://www.linkedin.com/in/sagar-padia/',
   },
   stats: [
     { value: '2+', label: 'Years Experience' },
@@ -74,9 +75,12 @@ export const projects = [
     name: 'Soika Mockingjay',
     rank: 'MVP',
     description:
-      'AI-powered chatbot platform with real-time streaming responses, multi-session management, and a premium conversational UI.',
-    tech: ['React', 'Tailwind CSS', 'MUI', 'Context API', 'SSE'],
-    github: 'https://github.com/sagarpadia',
+      'Soika Mockingjay is a production-ready AI desktop platform that delivers a smooth, enterprise-grade conversational experience with real-time SSE streaming, multi-session chats, and secure workspace management.',
+    longDescription:
+      'Soika Mockingjay is a production-ready AI desktop platform built to streamline conversational workflows, workspace management, and model configuration in one secure application. It provides a seamless chat experience with persistent sessions, dataset and knowledge management, user and profile administration, authentication flows, and environment setup through a polished desktop interface. Built as the sole front-end engineer from MVP to production, I shaped the application architecture, UX, and component system to support a scalable, enterprise-style product experience.',
+    tech: ['React', 'Tailwind CSS', 'TypeScript', 'Context API', 'SSE', 'Vite', 'React Markdown'],
+    video: 'https://drive.google.com/file/d/1jqmMwIxAQp2AVRty1gMzKAiT-3Nxa6XH/view?usp=drive_link',
+    images: [],
     live: null,
     featured: true,
   },
@@ -85,9 +89,12 @@ export const projects = [
     name: 'VahanYaar',
     rank: 'A+',
     description:
-      'Desktop-grade vehicle trading application built with Tauri for native performance, secure local storage, and offline-first architecture.',
-    tech: ['Tauri', 'React', 'Bootstrap', 'Rust'],
-    github: 'https://github.com/sagarpadia',
+      'VahanYaar is a desktop-based dealership management platform that centralizes vehicle purchase, sales, inventory, customer follow-ups, accounting, and partner transactions in one system.',
+    longDescription:
+      'VahanYaar is a desktop-first dealership management system built to centralize the full vehicle lifecycle in one workflow-driven platform. Designed for day-to-day operational use, it brings together inventory tracking, purchase and sales processing, customer and enquiry management, follow-up coordination, accounting ledgers, partner transactions, and profit-sharing into a single interface. It also includes reminder flows for time-sensitive dealership tasks such as RTO, insurance, and RUC, helping teams stay on top of compliance and post-sale operations without switching between disconnected tools. The application was built to reduce manual coordination, improve visibility across stock and financial records, and make dealership operations faster, more organized, and easier to manage at scale.',
+    tech: ['Tauri', 'React', 'Bootstrap', 'Rust', 'React-PDF-Viewer', 'Ant Design'],
+    video: 'https://www.youtube.com/watch?v=KjHinIJxPpY',
+    images: [],
     live: null,
     featured: true,
   },
@@ -97,8 +104,10 @@ export const projects = [
     rank: 'A',
     description:
       'Property management desktop app with integrated PDF viewing, contract generation, and real estate workflow automation.',
+    longDescription:
+      'BuildYaar is a desktop-first property management solution targeting real estate professionals. Built with Tauri and React, it provides in-app PDF viewing via React-PDF-Viewer, automated contract generation from templates, and a full property listing and client management workflow. The offline-capable architecture ensures data availability even without connectivity, while Bootstrap powers a clean and familiar UI for non-technical users.',
     tech: ['Tauri', 'React', 'React-PDF-Viewer', 'Bootstrap'],
-    github: 'https://github.com/sagarpadia',
+    images: [],
     live: null,
     featured: true,
   },
@@ -108,8 +117,10 @@ export const projects = [
     rank: 'A',
     description:
       'Next.js form builder with dynamic field composition, validation schemas, and export-ready output for enterprise workflows.',
+    longDescription:
+      'Punctualiti is a dynamic form builder built with Next.js and TypeScript, designed for enterprise teams that need flexible, validated data collection. Users can compose forms from a library of field types, configure validation schemas visually, and export completed forms in multiple formats. The builder uses a declarative schema approach under the hood, making it easy to version and programmatically generate forms from external configuration.',
     tech: ['Next.js', 'Tailwind CSS', 'TypeScript'],
-    github: 'https://github.com/sagarpadia',
+    images: [],
     live: null,
     featured: false,
   },

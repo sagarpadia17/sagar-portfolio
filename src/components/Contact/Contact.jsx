@@ -169,7 +169,7 @@ export default function Contact() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="contact" className="relative py-24 px-6">
+    <section className="relative py-24 px-6">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{ background: 'linear-gradient(180deg, transparent, rgba(201,162,39,0.025) 50%, transparent)' }}

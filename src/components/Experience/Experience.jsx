@@ -134,7 +134,7 @@ export default function Experience() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="experience" className="relative py-24 px-6">
+    <section className="relative py-24 px-6">
       {/* Section background accent */}
       <div
         className="absolute inset-0 pointer-events-none"

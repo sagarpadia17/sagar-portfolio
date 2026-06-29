@@ -1,5 +1,13 @@
-import Home from "./pages/Home.jsx";
+import { useState } from 'react'
+import Home from './pages/Home.jsx'
+import SplashScreen from './components/SplashScreen/SplashScreen.jsx'
 
 export default function App() {
-  return <Home />;
+  const [splashDone, setSplashDone] = useState(false)
+  return (
+    <>
+      {!splashDone && <SplashScreen onComplete={() => setSplashDone(true)} />}
+      <Home />
+    </>
+  )
 }

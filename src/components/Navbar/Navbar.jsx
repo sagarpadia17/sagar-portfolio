@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { navLinks } from '../../data/index.js'
+import { FiDownload } from 'react-icons/fi'
+import { navLinks, personalInfo } from '../../data/index.js'
 import { useScrollSpy } from '../../hooks/useScrollSpy.js'
 import { useScrollProgress } from '../../hooks/useScrollProgress.js'
 
@@ -20,14 +21,17 @@ export default function Navbar() {
 
   const scrollTo = (href) => {
     setMobileOpen(false)
-    const el = document.querySelector(href)
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
+    // Wait for mobile menu close animation before scrolling
+    setTimeout(() => {
+      const el = document.querySelector(href)
+      if (el) el.scrollIntoView({ behavior: 'smooth' })
+    }, 300)
   }
 
   return (
     <>
       {/* Scroll progress bar */}
-      <div className="fixed top-0 left-0 right-0 z-[60] h-[2px]" style={{ background: 'rgba(10,11,15,0.5)' }}>
+      <div className="fixed top-0 left-0 right-0 z-60 h-0.5" style={{ background: 'rgba(10,11,15,0.5)' }}>
         <motion.div
           className="h-full origin-left"
           style={{
@@ -71,7 +75,7 @@ export default function Navbar() {
                 className="font-semibold tracking-widest text-sm transition-colors duration-200 group-hover:text-gold"
                 style={{ fontFamily: 'Rajdhani, sans-serif', color: '#ECE8E1', letterSpacing: '0.2em' }}
               >
-                PADIA<span style={{ color: '#C9A227' }}>.DEV</span>
+                SAGAR<span style={{ color: '#C9A227' }}>.DEV</span>
               </span>
             </button>
 
@@ -113,9 +117,36 @@ export default function Navbar() {
               <motion.a
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
+                transition={{ delay: 0.38 }}
+                target="_blank"
+                href={personalInfo.resumeUrl}
+                download
+                className="ml-2 flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold tracking-wider clip-corner-sm transition-all duration-200 hover:scale-105"
+                style={{
+                  fontFamily: 'Rajdhani, sans-serif',
+                  color: '#4B9CD3',
+                  border: '1px solid rgba(75,156,211,0.4)',
+                  background: 'rgba(75,156,211,0.05)',
+                  letterSpacing: '0.1em',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = 'rgba(75,156,211,0.12)'
+                  e.currentTarget.style.borderColor = 'rgba(75,156,211,0.7)'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'rgba(75,156,211,0.05)'
+                  e.currentTarget.style.borderColor = 'rgba(75,156,211,0.4)'
+                }}
+              >
+                <FiDownload size={13} />
+                RESUME
+              </motion.a>
+              <motion.a
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
                 href="mailto:sagarpadia7@gmail.com"
-                className="ml-4 px-4 py-1.5 text-sm font-semibold tracking-wider clip-corner-sm transition-all duration-200 hover:scale-105"
+                className="ml-2 px-4 py-1.5 text-sm font-semibold tracking-wider clip-corner-sm transition-all duration-200 hover:scale-105"
                 style={{
                   fontFamily: 'Rajdhani, sans-serif',
                   background: 'linear-gradient(135deg, #C9A227, #A07820)',
@@ -194,13 +225,24 @@ export default function Navbar() {
                     </motion.button>
                   )
                 })}
-                <a
-                  href="mailto:sagarpadia7@gmail.com"
-                  className="mt-3 mx-3 py-2.5 text-center text-sm font-bold tracking-wider clip-corner-sm"
-                  style={{ fontFamily: 'Rajdhani, sans-serif', background: 'linear-gradient(135deg, #C9A227, #A07820)', color: '#0A0B0F', letterSpacing: '0.15em' }}
-                >
-                  HIRE ME
-                </a>
+                <div className="mt-3 mx-3 flex gap-3">
+                  <a
+                    href={personalInfo.resumeUrl}
+                    download
+                    className="flex-1 flex items-center justify-center gap-2 py-2.5 text-sm font-bold tracking-wider clip-corner-sm"
+                    style={{ fontFamily: 'Rajdhani, sans-serif', color: '#4B9CD3', border: '1px solid rgba(75,156,211,0.4)', background: 'rgba(75,156,211,0.05)', letterSpacing: '0.12em' }}
+                  >
+                    <FiDownload size={13} />
+                    RESUME
+                  </a>
+                  <a
+                    href="mailto:sagarpadia7@gmail.com"
+                    className="flex-1 py-2.5 text-center text-sm font-bold tracking-wider clip-corner-sm"
+                    style={{ fontFamily: 'Rajdhani, sans-serif', background: 'linear-gradient(135deg, #C9A227, #A07820)', color: '#0A0B0F', letterSpacing: '0.15em' }}
+                  >
+                    HIRE ME
+                  </a>
+                </div>
               </div>
             </motion.div>
           )}

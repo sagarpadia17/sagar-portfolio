@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from 'react'
 import { motion } from 'framer-motion'
+import { FiDownload } from 'react-icons/fi'
 import { personalInfo } from '../../data/index.js'
 
 function TypewriterText({ strings, className, style }) {
@@ -177,7 +178,6 @@ export default function Hero() {
                 }}
               >
                 <span className="relative z-10">VIEW PROJECTS</span>
-                {/* Tracer line on hover */}
                 <span
                   className="absolute bottom-0 left-0 h-0.5 w-0 group-hover:w-full transition-all duration-500"
                   style={{ background: 'rgba(255,255,255,0.4)' }}
@@ -207,6 +207,32 @@ export default function Hero() {
               >
                 CONTACT ME
               </a>
+              <a
+                href={personalInfo.resumeUrl}
+                download
+                target="_blank"
+                className="group flex items-center gap-2 px-7 py-3 font-bold tracking-wider text-sm clip-corner transition-all duration-300 hover:scale-105"
+                style={{
+                  fontFamily: 'Rajdhani, sans-serif',
+                  color: '#4B9CD3',
+                  border: '1px solid rgba(75, 156, 211, 0.4)',
+                  background: 'rgba(75, 156, 211, 0.05)',
+                  letterSpacing: '0.15em',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = 'rgba(75, 156, 211, 0.1)'
+                  e.currentTarget.style.borderColor = 'rgba(75, 156, 211, 0.7)'
+                  e.currentTarget.style.boxShadow = '0 0 20px rgba(75, 156, 211, 0.2)'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'rgba(75, 156, 211, 0.05)'
+                  e.currentTarget.style.borderColor = 'rgba(75, 156, 211, 0.4)'
+                  e.currentTarget.style.boxShadow = 'none'
+                }}
+              >
+                <FiDownload size={14} />
+                RESUME
+              </a>
             </motion.div>
 
             {/* Stats */}
@@ -227,16 +253,16 @@ export default function Hero() {
             <div className="relative" style={{ animation: 'float 6s ease-in-out infinite' }}>
               {/* Outer glow ring */}
               <div
-                className="absolute inset-[-8px] rounded-full opacity-40"
+                className="absolute -inset-2 rounded-full opacity-40"
                 style={{ background: 'conic-gradient(from 0deg, #C9A227, #4B9CD3, #C9A227)', animation: 'spin 8s linear infinite', filter: 'blur(4px)' }}
               />
               {/* Gold ring */}
               <div
-                className="absolute inset-[-4px] rounded-full"
+                className="absolute -inset-1 rounded-full"
                 style={{ background: 'conic-gradient(from 0deg, #C9A227 0%, #E8C547 25%, #A07820 50%, #E8C547 75%, #C9A227 100%)', animation: 'spin 6s linear infinite' }}
               />
               {/* Inner dark ring */}
-              <div className="absolute inset-[-1px] rounded-full" style={{ background: '#0A0B0F' }} />
+              <div className="absolute -inset-px rounded-full" style={{ background: '#0A0B0F' }} />
               {/* Image container */}
               <div
                 className="relative w-64 h-64 rounded-full overflow-hidden flex items-center justify-center"

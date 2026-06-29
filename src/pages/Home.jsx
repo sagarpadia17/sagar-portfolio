@@ -48,33 +48,43 @@ export default function Home() {
         {/* Section divider */}
         <div className="section-line mx-6" />
 
-        <Suspense fallback={<SectionFallback />}>
-          <About />
-        </Suspense>
+        <div id="about">
+          <Suspense fallback={<SectionFallback />}>
+            <About />
+          </Suspense>
+        </div>
 
         <div className="section-line mx-6" />
 
-        <Suspense fallback={<SectionFallback />}>
-          <Experience />
-        </Suspense>
+        <div id="experience">
+          <Suspense fallback={<SectionFallback />}>
+            <Experience />
+          </Suspense>
+        </div>
 
         <div className="section-line mx-6" />
 
-        <Suspense fallback={<SectionFallback />}>
-          <Skills />
-        </Suspense>
+        <div id="skills">
+          <Suspense fallback={<SectionFallback />}>
+            <Skills />
+          </Suspense>
+        </div>
 
         <div className="section-line mx-6" />
 
-        <Suspense fallback={<SectionFallback />}>
-          <Projects />
-        </Suspense>
+        <div id="projects">
+          <Suspense fallback={<SectionFallback />}>
+            <Projects />
+          </Suspense>
+        </div>
 
         <div className="section-line mx-6" />
 
-        <Suspense fallback={<SectionFallback />}>
-          <Contact />
-        </Suspense>
+        <div id="contact">
+          <Suspense fallback={<SectionFallback />}>
+            <Contact />
+          </Suspense>
+        </div>
       </main>
 
       <Footer />
