@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+@theme {
+  --color-void: #0A0B0F;
+  --color-void-light: #12141A;
+  --color-void-card: #0E1016;
+  --color-ink: #ECE8E1;
+  --color-ink-muted: #9BA4B5;
+  --color-gold: #C9A227;
+  --color-gold-light: #E8C547;
+  --color-gold-dark: #A07820;
+  --color-blue: #4B9CD3;
+  --color-blue-light: #6DB8F0;
+  --color-blue-dark: #2A6FA8;
+  --color-border: rgba(201, 162, 39, 0.15);
+  --color-border-blue: rgba(75, 156, 211, 0.2);
+
+  --font-rajdhani: 'Rajdhani', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-gold: pulse-gold 2s ease-in-out infinite;
+  --animate-scan: scan 8s linear infinite;
+  --animate-tracer: tracer 1.5s ease-in-out forwards;
+  --animate-shimmer: shimmer 2.5s linear infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 0 8px rgba(201, 162, 39, 0.4), 0 0 20px rgba(201, 162, 39, 0.1); }
+  50% { box-shadow: 0 0 20px rgba(201, 162, 39, 0.8), 0 0 40px rgba(201, 162, 39, 0.3); }
+}
+
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes tracer {
+  0% { width: 0; opacity: 1; }
+  70% { opacity: 1; }
+  100% { width: 100%; opacity: 0; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes reveal-left {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes grid-move {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(40px); }
+}
+
+@keyframes particle-drift {
+  0% { transform: translateY(0) translateX(0) scale(1); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 0.6; }
+  100% { transform: translateY(-120px) translateX(20px) scale(0.5); opacity: 0; }
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background-color: #0A0B0F;
+  color: #ECE8E1;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #0A0B0F; }
+::-webkit-scrollbar-thumb { background: #C9A227; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #E8C547; }
+
+/* Selection */
+::selection { background: rgba(201, 162, 39, 0.3); color: #ECE8E1; }
+
+/* Cursor hide for custom cursor */
+.custom-cursor-active * { cursor: none !important; }
+
+/* Utility: gold shimmer text */
+.text-shimmer {
+  background: linear-gradient(90deg, #C9A227 0%, #E8C547 30%, #fff8e7 50%, #E8C547 70%, #C9A227 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 2.5s linear infinite;
+}
+
+/* Gold border glow */
+.glow-gold {
+  box-shadow: 0 0 15px rgba(201, 162, 39, 0.3), 0 0 40px rgba(201, 162, 39, 0.1);
+}
+
+.glow-gold-strong {
+  box-shadow: 0 0 20px rgba(201, 162, 39, 0.6), 0 0 60px rgba(201, 162, 39, 0.2);
+}
+
+.glow-blue {
+  box-shadow: 0 0 15px rgba(75, 156, 211, 0.3), 0 0 40px rgba(75, 156, 211, 0.1);
+}
+
+/* Glass card */
+.glass {
+  background: rgba(14, 16, 22, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(201, 162, 39, 0.15);
+}
+
+/* Clip path corner cut — top-right */
+.clip-corner {
+  clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
+}
+
+.clip-corner-sm {
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+}
+
+/* Section divider line */
+.section-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C9A227, transparent);
+}
