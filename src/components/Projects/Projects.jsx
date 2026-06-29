@@ -80,7 +80,7 @@ function ImageGallery({ images }) {
 
 function ProjectModal({ project, onClose }) {
   const rank = rankStyles[project.rank] || rankStyles.A
-  const embedUrl = getEmbedUrl(project.video)
+  const embedUrl = getDriveEmbedUrl(project.video)
   const hasMedia = embedUrl || (project.images && project.images.length > 0)
 
   useEffect(() => {
@@ -371,7 +371,7 @@ function ProjectCard({ project, index, onOpen }) {
             )}
             {project.video && (
               <div
-                className="flex z-1000 items-center justify-center w-8 h-8 transition-all duration-200"
+                className="flex items-center justify-center w-8 h-8 transition-all duration-200"
                 style={{
                   border: '1px solid rgba(201,162,39,0.2)',
                   color: hovered ? '#C9A227' : '#9BA4B5',
