@@ -1,7 +1,7 @@
 export const personalInfo = {
   name: 'Sagar Padia',
   title: 'Front-End Developer',
-  resumeUrl: 'https://drive.google.com/file/d/1w5hnRRhTsyb8AAi-SxlsvyTvlM_8CJe3/view?usp=drive_link',
+  resumeUrl: 'https://drive.google.com/file/d/19i3Bfvd-8W2sYgOOrieHwvkXU8zNsF_Y/view?usp=sharing',
   taglines: [
     'Front-End Developer',
     'UI/UX Craftsman',
